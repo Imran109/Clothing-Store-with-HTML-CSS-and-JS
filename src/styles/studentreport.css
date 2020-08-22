@@ -1,0 +1,16 @@
+table, th, td {
+    border: 1px solid black;
+  }
+
+th{
+    background-color: aquamarine;
+}
+
+td{
+    border-color: yellow;
+    background-color: yellowgreen;
+}
+
+.student{
+    color: blue;
+}

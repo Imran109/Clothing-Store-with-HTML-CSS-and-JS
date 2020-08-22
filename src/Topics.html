@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titles</title>
+</head>
+
+<style>
+    li{
+        padding-top: 30px;
+    }
+    a{
+        color:black;
+        font-weight: bolder;
+        cursor: pointer;
+        font-size: 30px;
+        border: 10px;
+        text-decoration: wavy;
+        background-color: gainsboro;
+        background-image: linear-gradient(red, yellow);
+        padding: 5px 11px;
+        border-style: 2px solid;
+        border-radius: 20px;
+    }
+
+    a:hover{
+        border:1px solid blue;
+        background-image: linear-gradient(to right, red, orange);
+
+    }
+</style>
+
+<body background="../images/titleback.jpg">
+    <ul style="align-items: center; text-align: center; list-style-type: none; margin-top: 250px;">
+        <li>
+            <a onclick="parent.changeLinktoShirts()">Shirts</a>
+        </li>
+        <li>
+            <a onclick="parent.changeLinktoPants()">Pants</a>
+        </li>
+        <li>
+            <a onclick="parent.changeLinktoSummerCollections()">Summer Collections</a>
+        </li>
+        <li>
+            <a onclick="parent.changeLinktoWinterCollections()">Winter Collections</a>
+        </li>
+        <li>
+            <a onclick="parent.changeLinktoWatches()">Watches</a>
+        </li>
+        <li>
+            <a onclick="parent.changeLinktoSunGlasses()">Sun glasses</a>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.container{
+    text-align: center;
+    text-decoration: none;
+    text-decoration-style: none;
+    list-style: none;
+    background-image: url(/images/background.jpg);
+    background-size: contain;
+    color: black;
+}
+
+.list{
+    color: black;
+    text-decoration: none;
+    text-decoration-style: none;
+    list-style: none;
+    font-weight: bold;
+}
+li a{color:white} 
