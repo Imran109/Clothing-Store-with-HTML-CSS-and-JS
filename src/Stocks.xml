@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="Stocks.xslt"?>
+<Products>
+    <Shirts>
+        <Brand>Nike</Brand>
+        <Size>M</Size>
+        <Cost>3200</Cost>
+        <Availability>Yes</Availability>
+    </Shirts>
+
+    <Shirts>
+        <Brand>Adidas</Brand>
+        <Size>S</Size>
+        <Cost>1200</Cost>
+        <Availability>No</Availability>
+    </Shirts>
+
+    <Shirts>
+        <Brand>Reebok</Brand>
+        <Size>L</Size>
+        <Cost>3600</Cost>
+        <Availability>No</Availability>
+    </Shirts>
+
+    <Pants>
+        <Brand>The North Face</Brand>
+        <Size>28</Size>
+        <Cost>4500</Cost>
+        <Availability>Yes</Availability>
+    </Pants>
+
+    <Pants>
+        <Brand>Tommy Hilfiger</Brand>
+        <Size>30</Size>
+        <Cost>3700</Cost>
+        <Availability>Yes</Availability>
+    </Pants>
+
+    <Pants>
+        <Brand>Peter England</Brand>
+        <Size>32</Size>
+        <Cost>3000</Cost>
+        <Availability>No</Availability>
+    </Pants>
+      
+    <Watches>
+        <Brand>Titan</Brand>
+        <Size>6 in</Size>
+        <Cost>25000</Cost>
+        <Availability>Yes</Availability>
+    </Watches>
+
+    <Watches>
+        <Brand>Fast Track</Brand>
+        <Size>6.5 in</Size>
+        <Cost>15000</Cost>
+        <Availability>Yes</Availability>
+    </Watches>
+
+    <Watches>
+        <Brand>Timex</Brand>
+        <Size>6 in</Size>
+        <Cost>2000</Cost>
+        <Availability>No</Availability>
+    </Watches>
+</Products>

@@ -4,9 +4,10 @@
         <link rel="stylesheet" href="styles/navbar.css">
         <link rel="stylesheet" href="styles/footer.css">
         <link rel="stylesheet" href="styles/studentreport.css">
-        <title>Students Report</title>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <title>Product Report</title>
     </head>
-    <body>
+    <body onload="fetchData()">
         <header>
             <img class="logo" src="../images/logo.png" alt="logo">
             <nav>
@@ -19,39 +20,102 @@
             </nav>
             <a class="cta" href="Login.html"><button>Login</button></a>
         </header>
-    <h1 style="align-content: center; text-align: center;">Students Report</h1>
+    <h1 style="align-content: center; text-align: center;">Products Report</h1>
+    <script>
+        async function fetchData(){
+            const table = document.getElementById("serverData");
+            const td = document.createElement("td")
+            const tr = document.createElement("tr")
+            await axios.get('http://localhost:1337/products')
+            .then(function (response) {
+            var data = response.data;
+            console.log('data:', data)
+
+            let table = document.querySelector("table");
+            for(let element of data){
+                console.log('element:', element)
+                console.log('element:', typeof element)
+                let row = table.insertRow();
+                usefulData = {
+                    Availability : element["Availability"],
+                    ID : element["id"],
+                    name : element["productname"],
+                    brand : element["brand"],
+                    cost : element["cost"]
+            }
+            console.log(usefulData)
+                for (key in usefulData) {
+                    let cell = row.insertCell();
+                    let text = document.createTextNode(usefulData[key]);
+                    cell.appendChild(text);
+    }
+  }
+        })
+    }
+    function addNewProduct(){
+        form = document.getElementById("form")    
+        form.addEventListener("submit", e => {
+        e.preventDefault();
+    });
+        newProductName = form.newproductname.value;
+        newProductCost = form.newproductcost.value;
+        newProductAvailability = form.newproductavailability.value;
+        newProductId = form.newproductid.value;
+        newProductBrand = form.newproductbrand.value;
+        console.log(newProductName, newProductCost, newProductAvailability, newProductId, newProductBrand)
+        axios.post('http://localhost:1337/products', {
+        "Availability": newProductAvailability,
+        "productid": newProductId,
+        "productname": newProductName,
+        "brand": newProductBrand,
+        "cost": newProductCost,
+      })
+      .then(function (response) {
+        console.log(response.data);
+        console.log(newProductAvailability, newProductBrand, newProductCost, newProductName, newProductId)
+      })
+    }
+    </script>
     <table style="width:50%; text-align: center; align-content: center; align-items: center; margin-left: 350px;">
         <tr>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Country</th>
-          <th>Email</th>
-          <th>Website</th>
+        <th>Availability</th>
+          <th>Product ID</th>
+          <th>Product Name</th>
+          <th>Brand</th>
+          <th>Cost</th>
         </tr>
-        <tr>
-          <td>James</td>
-          <td>Butt</td>
-          <td>Orleans</td>
-          <td><a class="student" href="mailto:jbutt@gmail.com">jbutt@gmail.com</a></td>
-          <td><a class="student" href="http://www.carshowroom.com">http://www.carshowroom.com</a></td>
-        </tr>
-        <tr>
-          <td>Darakjy</td>
-          <td>Joseph</td>
-          <td>Livingston</td>
-          <td><a class="student" href="mailto:djojase@gmail.com">djojase@gmail.com</a></td>
-          <td><a class="student" href="http://www.shoppingcart.com">http://www.shoppingcart.com</a></td>
-        </tr>
-        <tr>
-          <td>Mendel</td>
-          <td>screw</td>
-          <td>India</td>
-          <td><a class="student" href = "mailto:msrarask@gmail.com">msrarask@gmail.com</a></td>
-          <td><a class="student" href="http://www.psmi.com">http://www.psmi.com</a></td>
-        </tr>
-
-        
       </table>
+
+      <form id="form">
+        <div class="add-products" style="margin-top: 200px; width: 100%;">
+            <label>Product Name</label>
+            <input name="newproductname" placeholder="Product Name" />
+            <label>Product ID</label>
+            <input name="newproductid" placeholder="Product ID" />
+            <label>Product Brand</label>
+            <input name="newproductbrand" placeholder="Product Brand" />
+            <label>Product Cost</label>
+            <input name="newproductcost" placeholder="Product Cost" />
+            <label>Product Availability</label>
+            <input name="newproductavailability" placeholder="Product Availability" />
+            <button type="submit" onclick="addNewProduct()">Add New Product</button>
+        </div>
+      </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       <footer class="footer-distributed">
         <div class="footer-left">
@@ -67,11 +131,11 @@
         <div class="footer-center">
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>P C Street</span> Chennai, India</p>
+                <p><span>Flower Garden Street</span>India</p>
             </div>
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+91 9094526990</p>
+                <p>+91 9294612920</p>
             </div>
             <div>
                 <i class="fa fa-envelope"></i>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles/doctorlogin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/ValidateForm.js"></script>
+    <title>User Login</title>
+</head>
+<body>
+    <div>
+        <h1 class="heading">SmartFits | User Login</h1>
+        <form class="registration-form" id="form">
+            <fieldset class="fieldset">
+                <legend style="text-align: start; color: rgb(38, 119, 212); font-weight: bold;">Sign in to your account</legend>
+                <p class="inner-heading">Please enter your username and password to log in </p>
+                <div class="input-container">
+                    <i class="material-icons icon">mail</i>
+                    <input type="text" id="username" placeholder="Username" class="input-field-icon" name = "username"><br><br>
+                </div>
+                <div class="input-container">
+                    <i class="material-icons icon">lock</i>
+                    <input type="password" id="password" placeholder="Password" class="input-field-icon" name="password"><br><br>
+                </div>
+                <div style="display: flex;margin-top: -30px;">
+                    <a href="https://github.com/" style="margin-left: 0%; margin-top: 5%; color: rgb(38, 119, 212);">Forgot password ?</a>
+                </div>
+                <div style="justify-content: flex-end; display: flex;">
+                    <button onclick="validateLogin()" class="submit-button" style="cursor: pointer;">Login <i class="material-icons" style="font-size:large; padding-right: 3px;padding-left: 5px;" >send</i></button>
+                </div>
+                <div id = "auth">
+
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

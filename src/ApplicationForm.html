@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/Login.css">
+    <script src="./scripts/ValidateForm.js"></script>
+    <title>Application Form</title>
+</head>
+<body>
+    <header>
+        <img class="logo" src="../images/logo.png" alt="logo">
+        <nav>
+            <ul class="nav_links">
+                <li> <a href="index.html">Home </a></li>
+                <li> <a href="Products.html">Products </a></li>
+                <li> <a href="Contacts.html">Contact</a></li>
+                <li> <a href="AboutUs.html">About</a></li>
+            </ul>
+        </nav>
+        <a class="cta" href="Login.html"><button>Login</button></a>
+    </header>
+
+    <body style="background-color: aliceblue;">
+        <style>
+            fieldset {
+            background-color: #add8e6;
+            margin-bottom: 20px;
+            }
+            legend {
+            background-color: rebeccapurple;
+            color: white;
+            padding: 5px 10px;
+            }
+            input {
+            margin: 5px;          
+            height: 20px;
+            }
+            .main input{
+                float: right;
+                margin-right: 1325px;
+                margin-top: -5px;
+            }
+            input:hover{
+                background-color: lightgreen;
+            }
+        </style>
+
+       
+        
+        <h1 style="text-align: center;">Want to join us?</h1>
+        <form style="margin-top: 10px;" id = "form">
+            <fieldset class="main">
+                <legend>Personal Information:</legend>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="skype_id">Skype ID:</label>
+                <input type="text" id="skype" name="skype"><br><br>
+                <label for= "education_degree">Education Degree?</label>
+                <input type="education_degree" id="education_degree" name="education_degree"><br><br>
+            </fieldset>
+
+            <fieldset>
+                <legend>Freelancing Information</legend>
+                <label for="query_freelance">Which platform do you use for freelancing?</label>
+                <div class="checkboxes">
+                    <input type="checkbox" name="upwork" value="upwork">
+                    <label for = "upwork">Upwork</label>
+                    <input type="checkbox" name="freelancer" value="freelancer">
+                    <label for = "freelancer">Freelancer</label>
+                    <input type="checkbox" name="elancer" value="elancer">
+                    <label for = "elancer">Elancer</label>
+                    <input type="checkbox" name="referencebasedwork" value="referencebasedwork">
+                    <label for = "referencebasedwork">Reference based work</label>
+                    <input type="checkbox" name="other" value="other">
+                    <label for = "other">Other?</label>
+                    <input type="text" name="others" style="width: 30%;">            
+                </div>
+
+                <div style="margin-top: 30px;"><label for="query_clients">Which Clients do you serve</label></div>
+                <div class="checkboxes">
+                    <input type="checkbox" name="foreign" value="foreign">
+                    <label for = "foreign">Foreign</label>
+                    <input type="checkbox" name="local" value="local">
+                    <label for = "local">Local</label>
+                </div>
+
+                <div style="margin-top: 30px;"><label for="query_area">What is your core area?</label></div>
+                <div class="checkboxes">
+                    <input type="checkbox" name="writer">
+                    <label for = "Writer">Writer</label>
+                    <input type="checkbox" name="developer">
+                    <label for = "Developer">Developer</label>
+                    <input type="checkbox" name="designer">
+                    <label for = "Designer">Designer</label>
+                    <input type="checkbox" name="software">
+                    <label for = "Software">Software Developer</label>
+                    <input type="checkbox" name="mobile">
+                    <label for = "Mobile">Mobile Developer</label>
+                    <input type="checkbox" name="otherscheckBox">
+                    <label for = "Other">Other?</label>
+                    <input type="text" name="othersarea" style="width: 30%;">                            
+                </div>
+            </fieldset>
+
+            <div><label for="query_training" style="font-weight: bold;">What kind of training are you interested(if required):</label></div>
+            <select name="area" id="select" class="requried">
+                <option disabled = "disabled" value="">Choose one</option>
+                <option value="remote">Remote Training</option>
+                <option value="local">Local Training</option>
+                <option value="onsite">Onsite Training</option>
+                <option value="home">Home</option>
+            </select>
+            <button type="submit" onclick="validateForm()">Submit</button>
+        </form>
+
+    
+
+
+        <footer class="footer-distributed">
+            <div class="footer-left">
+                <h3>Smart<span>&nbsp;Fits</span></h3>
+                    <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="AboutUs.html">About</a>
+                    <a href="FAQS.html">Faq</a>
+                    <a href="Contacts.html">Contact</a>
+                </p>
+                <p class="footer-company-name">P S Mohamed Imran &copy; 2020</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Flower Garden Street</span>India</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+91 9294612920</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">smartfits@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>About the company</span>
+                        We provide almost all variety of clothings for all sizes
+                    </p>
+                    <div class="footer-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/mohamedimranps"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.github.com/Imran109"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

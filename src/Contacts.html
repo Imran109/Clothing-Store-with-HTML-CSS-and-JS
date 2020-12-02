@@ -19,27 +19,19 @@
                 <li> <a href="AboutUs.html">About</a></li>
             </ul>
         </nav>
+        <a class="cta" href="PatientRegistration.html"><button>Register</button></a>
         <a class="cta" href="Login.html"><button>Login</button></a>
     </header>
 
 
-    <form action="//submit.form" id="ContactUs100" method="post" onsubmit="return ValidateForm(this);">
-        <script type="text/javascript">
-            function ValidateForm(frm) {
-                if (frm.Name.value == "") { alert('Name is required.'); frm.Name.focus(); return false; }
-                if (frm.FromEmailAddress.value == "") { alert('Email address is required.'); frm.FromEmailAddress.focus(); return false; }
-                if (frm.FromEmailAddress.value.indexOf("@") < 1 || frm.FromEmailAddress.value.indexOf(".") < 1) { alert('Please enter a valid email address.'); frm.FromEmailAddress.focus(); return false; }
-                if (frm.Comments.value == "") { alert('Please enter comments or questions.'); frm.Comments.focus(); return false; }
-                return true; 
-            }
-        </script>
+    <form id="ContactUs100">
         <table style="max-width:550px;border:0;" cellpadding="8" cellspacing="0">
             <tr>
                  <td>
                     <label for="Name">Name*:</label>
                 </td> 
                 <td>
-                    <input name="Name" type="text" maxlength="60" style="max-width:250px;" />
+                    <input name="name" type="text" maxlength="60" style="max-width:250px;" />
                 </td> 
             </tr> 
             <tr> 
@@ -55,7 +47,7 @@
                     <label for="FromEmailAddress">Email address*:</label>
                 </td> 
                 <td>
-                    <input name="FromEmailAddress" type="text" maxlength="90" style="max-width:250px;" />
+                    <input name="email" type="text" maxlength="90" style="max-width:250px;" />
                 </td> 
             </tr> 
             <tr> 
@@ -70,13 +62,114 @@
                 <td>
                 </td> 
                 <td>
-                    <input name="skip_Submit" type="submit" value="Submit" />
+                    <input name="skip_Submit" type="submit" value="Submit" onclick="ValidateForm()" />
                 </td> 
             </tr>
         </table>
     </form>
 
+    <script type="text/javascript">
+        function checkName(form){
+            var regex = /^[a-zA-Z ]+$/;
+            if(regex.test(form.name.value) == false){
+                alert("Name must be in alphabets only");
+                form.name.focus();
+                return false;
+        }
+            if(form.name.value == " "){
+                alert("Name Field cannot be left empty");
+                form.name.focus();
+                return false;
+            }
+            return true;
+        }
+        function checkPhone(form){
+            var phoneno = /^\d{10}$/;
+            if(form.PhoneNumber.value.match(phoneno))
+                {
+                return true;
+                    }
+                else
+                    {
+                    alert("invalid phone number");
+                    return false;
+                    }
+        }
+        function checkEmail(form){
+            var regex = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
+            if(regex.test(form.email.value)){
+                return true;
+            }
+            else{
+                alert("This is not a valid email address");
+                return false;
+            }
+    }
+        function checkComments(form){
+            var comments = /^[a-zA-Z0-9]{5,100}/;
+            if(comments.test(form.Comments.value)){
+                return true;
+            }
+            else{
+                alert("This is not a valid comment");
+                return false;
+            }
+}
+        function ValidateForm() {
+            const form = document.getElementById("ContactUs100");
+            form.addEventListener("submit", e => {
+                e.preventDefault();
+            });
+            checkName(form)
+            checkPhone(form)
+            checkEmail(form)
+            checkComments(form)
 
+        }
+    </script>
+
+    <!-- Stlyngs for BOX-Model -->
+
+    <style> 
+        .main { 
+            font-size:36px; 
+            font-weight:bold; 
+            Text-align:center; 
+            align-items: center;
+            text-decoration-line: underline;
+        } 
+        .inner1 { 
+            margin-left:585px; 
+            border:50px solid purple; 
+            width:300px; 
+            height:150px; 
+            text-align:center; 
+            padding:50px; 
+            background-image: linear-gradient(green, yellow);
+            box-shadow: 2px 2px 2px 5px rebeccapurple;
+        } 
+        .inner2 { 
+            font-size:42px; 
+            font-weight:bold; 
+            color: green; 
+            background-image: linear-gradient(red, yellow);
+            box-shadow: 7px 5px 5px 7px;
+        } 
+        .inner3 { 
+            font-size:18px; 
+            font-weight:bold; 
+            background-image: linear-gradient(yellow, orange);
+            color: brown;
+        } 
+    </style> 
+
+    <div style = "margin-top: -150px;">
+        <div class = "main" style = "margin-top: -30px; padding-bottom: 30px;";">CSS Box-Model Implementation</div> 
+            <div class = "inner1"> 
+                <div class = "inner2">SMARTFITS STORE</div> 
+                <div class = "inner3">Buy Variety of clothing products at the best price</div> 
+            </div> 
+    </div>
     <footer class="footer-distributed">
         <div class="footer-left">
             <h3>Smart<span>&nbsp;Fits</span></h3>
@@ -91,11 +184,11 @@
         <div class="footer-center">
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>P C Street</span> Chennai, India</p>
+                <p><span>Flower Garden Street</span>India</p>
             </div>
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+91 9094526990</p>
+                <p>+91 9294612920</p>
             </div>
             <div>
                 <i class="fa fa-envelope"></i>

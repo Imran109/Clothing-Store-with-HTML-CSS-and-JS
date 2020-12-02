@@ -6,9 +6,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/Login.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./scripts/ValidateForm.js"></script>
     <title>Login</title>
 </head>
-<body>
+<body style="  background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+">
     <header>
         <img class="logo" src="../images/logo.png" alt="logo">
         <nav>
@@ -21,6 +25,36 @@
         </nav>
         <a class="cta" href="Login.html"><button>Login</button></a>
     </header>
+
+
+    <form id="form" style="align-items: center; text-align: center; margin-top: 200px;">
+        <div class="imgcontainer">
+          <!-- <img src="img_avatar2.png" alt="Avatar" class="avatar"> -->
+        </div>
+      
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="username" required style="padding: 5px; opacity: 0.6;">
+        <div style="padding: 15px;">
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required style="padding: 5px; opacity: 0.6;">
+        </div>
+        <div>
+          <button type="submit" onclick="validateLogin()">Login</button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+          <!-- <div class="container" style="background-color:#f1f1f1"> -->
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="">Forgot password</span>
+        </div>
+        </div>
+      
+        <div id="auth"></div>
+        </div>
+      </form>
+
+
     <footer class="footer-distributed">
         <div class="footer-left">
             <h3>Smart<span>&nbsp;Fits</span></h3>
@@ -35,11 +69,11 @@
         <div class="footer-center">
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>P C Street</span> Chennai, India</p>
+                <p><span>Flower Garden Street</span>India</p>
             </div>
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+91 9094526990</p>
+                <p>+91 9294612920</p>
             </div>
             <div>
                 <i class="fa fa-envelope"></i>

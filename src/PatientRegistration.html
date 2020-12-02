@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- <link rel="stylesheet" href="./styles/doctorlogin.css"> -->
+        <link rel="stylesheet" href="./styles/RegisterStyles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <meta charset="UTF-8">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="./scripts/ValidateForm.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User Registration</title>
+    </head>
+    <body>
+        <div>
+            <form class="login-box" id = "form">
+                <h1 style="color: peru;">SmartFits Registration</h1>
+                <fieldset class="fieldset">
+                    <legend style="text-align: start; color: rgb(38, 119, 212); font-weight: bold;">Sign Up</legend>
+                    <p class="inner-heading" style="color: black; font-weight: bold;">Enter your details below </p>
+                    <div class="textbox">
+                        <input type="text" id="fullname" placeholder="Fullname" class="input-field" name="name" style="color: black; font-weight: bold;"><br><br>
+                    </div>
+                    <div class="textbox">
+                        <input type="text" id="address" placeholder="Address" class="input-field" name="address" style="color: black; font-weight: bold;"><br><br>
+                    </div>
+                    <div class="textbox">
+                        <input type="text" id="city" placeholder="City" class="input-field"><br><br>
+                    </div>
+                    <p class="inner-heading">Gender</p>
+                    <div style="display: flex;">
+                        <input type="radio" id="female" name="gender_female" value="female" >
+                        <label for="female" style="margin-right: 10px;">Female</label>
+                        <input type="radio" id="male" name="gender_male" value="male">
+                        <label for="male">Male</label><br>
+                    </div>
+                    <p class="inner-heading">Enter your account details below </p>
+                    <div class="textbox">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="email" placeholder="Email" class="input-field-icon" name="email"><br><br>
+                    </div>
+                    <div class="textbox">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password" class="input-field-icon" name="pwd1"><br><br>
+                    </div>
+                    <div class="textbox">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password_again" placeholder="Password Again" class="input-field-icon" name="pwd2"><br><br>
+                    </div>
+
+                    <div style="display: flex;">
+                        <input type="checkbox" id="agree" name="agree" value="I agree" name="agree">
+                        <label for="agree" > I agree</label>
+                    </div>
+                    <div style="display: flex;">
+                        <p class="inner-heading" style="margin-right: 1%;">Already have an account?</p>
+                        <a href="Login.html" style="margin-left: 0%; margin-top: 5%; color: rgb(38, 119, 212);">Log-in</a>
+                    </div>
+                    <div style="justify-content: flex-end; display: flex;">
+                        <button class="btn" style="cursor: pointer;" type="submit" onclick="validateRegistration();" id="sub" style="color: black;" >Submit <i class="material-icons" style="font-size:large; padding-right: 3px;padding-left: 5px; color: black;">send</i></button>
+                    </div>
+                    <div id = "agreearea"></div>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,185 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="styles/navbar.css">
+        <link rel="stylesheet" href="styles/footer.css">
+        <link rel="stylesheet" href="styles/styles.css">
+        <title>SmartFits Online Clothing Store</title>
+    </head>
+
+    <script>
+        function loadOfferXML() {
+		  var xhttp = new XMLHttpRequest();
+		  xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+			  displayOffersTable(this);
+			}
+		  };
+		  xhttp.open("GET", "Stocks.xml", true);
+		  xhttp.send();
+		}
+		function displayOffersTable(xml) {
+		  var i;
+		  var xmlDoc = xml.responseXML;
+		  var table="<tr><th>Brand</th>"+
+                    "<th>Size</th>"+
+                    "<th>Cost ( Rs. )</th>"+
+                    "<th>Availability</th></tr>";
+		  var x = xmlDoc.getElementsByTagName("Shirts");
+		  var y = xmlDoc.getElementsByTagName("Pants");
+		  var z = xmlDoc.getElementsByTagName("Watches");
+		  for (i = 0; i <x.length; i++) { 
+			table += "<tr><td>" +
+			x[i].getElementsByTagName("Brand")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			x[i].getElementsByTagName("Size")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			x[i].getElementsByTagName("Cost")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			x[i].getElementsByTagName("Availability")[0].childNodes[0].nodeValue +
+			"</td></tr>";
+		  }
+		  document.getElementById("offer-table1").innerHTML = table;
+		
+          var table="<tr><th>Brand</th>"+
+                    "<th>Size</th>"+
+                    "<th>Cost ( Rs. )</th>"+
+                    "<th>Availability</th></tr>";
+
+		  for (i = 0; i <y.length; i++) { 
+			table += "<tr><td>" +
+			y[i].getElementsByTagName("Brand")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			y[i].getElementsByTagName("Size")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			y[i].getElementsByTagName("Cost")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			y[i].getElementsByTagName("Availability")[0].childNodes[0].nodeValue +
+			"</td></tr>";
+		  }
+		  document.getElementById("offer-table2").innerHTML = table;
+		
+          var table="<tr><th>Brand</th>"+
+                    "<th>Size</th>"+
+                    "<th>Cost ( Rs. )</th>"+
+                    "<th>Availability</th></tr>";
+
+		  for (i = 0; i <z.length; i++) { 
+			table += "<tr><td>" +
+			z[i].getElementsByTagName("Brand")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			z[i].getElementsByTagName("Size")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			z[i].getElementsByTagName("Cost")[0].childNodes[0].nodeValue +
+			"</td><td>" +
+			z[i].getElementsByTagName("Availability")[0].childNodes[0].nodeValue +
+			"</td></tr>";
+		  }
+		  document.getElementById("offer-table3").innerHTML = table;
+		}
+    </script>
+
+
+    <body class="container">
+        <header>
+            <img class="logo" src="../images/logo.png" alt="logo">
+            <nav>
+                <ul class="nav_links">
+                    <li> <a href="index.html">Home </a></li>
+                    <li> <a href="Products.html">Products </a></li>
+                    <li> <a href="Contacts.html">Contact</a></li>
+                    <li> <a href="AboutUs.html">About</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="PatientRegistration.html"><button>Register</button></a>
+            <a class="cta" href="Login.html"><button>Login</button></a>
+
+        </header>
+
+        <style>
+            h1{
+                color: orangered;
+            }
+            h2{
+                color: yellowgreen;
+            }
+            h3{
+                color: royalblue;
+            }
+            td{
+                font-weight:bolder;
+                background-color: pink;
+                text-align: center;
+            }
+            th{
+                color:white;
+            }
+            table{
+                width:50%; 
+                border:3px solid white; 
+                color: black; 
+                margin-left: auto; 
+                margin-right: auto; 
+                padding: 5px;
+            }
+            tr{
+                width:50%; 
+                border:3px solid black; 
+                color: black; 
+                margin-left: auto; 
+                margin-right: auto; 
+                padding: 5px;
+            }
+        </style>
+        <h1>Pick from our wide range of fashion products</h1><br>
+        <h2>Check out our items in the products section</h2>
+           
+
+        <a class="cta"><button onclick="loadOfferXML()">Show Stocks</button></a>
+
+        <table id="offer-table1" class="offer-table1"></table>
+        <table id="offer-table2" class="offer-table2"></table>
+        <table id="offer-table3" class="offer-table3"></table>
+
+
+        <footer class="footer-distributed">
+            <div class="footer-left">
+                <h3>Smart<span>&nbsp;Fits</span></h3>
+                    <p class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="AboutUs.html">About</a>
+                    <a href="FAQS.html">Faq</a>
+                    <a href="Contacts.html">Contact</a>
+                </p>
+                <p class="footer-company-name">P S Mohamed Imran &copy; 2020</p>
+            </div>
+            <div class="footer-center">
+                <div>
+                    <i class="fa fa-map-marker"></i>
+                    <p><span>Flower Garden Street</span>India</p>
+                </div>
+                <div>
+                    <i class="fa fa-phone"></i>
+                    <p>+91 9294612920</p>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <p><a href="mailto:support@company.com">smartfits@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p class="footer-company-about">
+                        <span>About the company</span>
+                        We provide almost all variety of clothings for all sizes
+                    </p>
+                    <div class="footer-icons">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/mohamedimranps"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.github.com/Imran109"><i class="fa fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

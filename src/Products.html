@@ -4,12 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./scripts/ChangeTitle.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/footer.css">
     <title>Products</title>
 </head>
-<body>
+<script>
+    async function authUser(){
+        try{
+            var button = "";
+            var checkUserAuth = localStorage.getItem("token")
+            const  data  = await axios.get('http://localhost:1337/images', {
+            headers: {
+            Authorization:
+            'Bearer ' + checkUserAuth,
+        },
+        });
+        if(data){
+            button = "Logout"
+        }
+        else{
+            button = "Login"
+        }
+    }
+        catch(err){
+            button = "Login"
+        }
+        document.getElementById("userAuth").innerHTML = button
+    }
+
+    function logUser(){
+    var checkUserAuth = localStorage.getItem("token")
+    if(document.getElementById("userAuth").innerHTML === "Logout" && 
+    localStorage.getItem("token")){
+       localStorage.removeItem("token");
+        document.getElementById("userAuth").innerHTML = "Login"   
+    }       
+}
+
+</script>
+<body onload="authUser()">
     <header>
         <img class="logo" src="../images/logo.png" alt="logo">
         <nav>
@@ -20,11 +55,14 @@
                 <li> <a href="AboutUs.html">About</a></li>
             </ul>
         </nav>
-        <a class="cta" href="Login.html"><button>Login</button></a>
+        <a class="cta" href="Students.html"><button>Admin</button></a>
+        <a class="cta" href="Login.html"><button id="userAuth" onclick="logUser()"></button></a>
     </header>
 
     <iframe name="contacts" src="Topics.html" height="1000" width="500" scrolling = "yes"></iframe>
     <iframe name="products" src="./titles/Shirts.html" height="1000" width="68.9%" scrolling = "yes" id="products-frame"></iframe>
 
+
+    
 </body>
 </html>
