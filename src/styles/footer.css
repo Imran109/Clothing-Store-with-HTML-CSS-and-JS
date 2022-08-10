@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 footer{
-	position: fixed;
-	bottom: 0;
+	margin-bottom: 0;
 }
 .footer-distributed{
     font-family: "Montserrat", sans-serif;
@@ -12,9 +11,8 @@ footer{
 	width: 100%;
 	text-align: left;
 	font: bold 16px sans-serif;
-	padding: 10px 50px;
+	padding: 4em;
 	margin-top: 60px;
-	margin-left: -10px;
 }
  
 .footer-distributed .footer-left,
@@ -121,7 +119,6 @@ footer{
 	color:  #ffffff;
 	font-size: 14px;
 	font-weight: bold;
-	margin-bottom: 20px;
 }
  
 .footer-distributed .footer-icons{

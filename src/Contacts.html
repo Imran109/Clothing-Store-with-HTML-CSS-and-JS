@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/global-styling.css">
     <link rel="stylesheet" href="styles/navbar.css">
     <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/form-styling.css">
     <title>Web Page under Development</title>
 </head>
 <body>
@@ -23,50 +25,19 @@
         <a class="cta" href="Login.html"><button>Login</button></a>
     </header>
 
-
-    <form id="ContactUs100">
-        <table style="max-width:550px;border:0;" cellpadding="8" cellspacing="0">
-            <tr>
-                 <td>
-                    <label for="Name">Name*:</label>
-                </td> 
-                <td>
-                    <input name="name" type="text" maxlength="60" style="max-width:250px;" />
-                </td> 
-            </tr> 
-            <tr> 
-                <td>
-                    <label for="PhoneNumber">Phone number:</label>
-                </td> 
-                <td>
-                    <input name="PhoneNumber" type="text" maxlength="43" style="max-width:250px;" />
-                </td> 
-            </tr> 
-            <tr> 
-                <td>
-                    <label for="FromEmailAddress">Email address*:</label>
-                </td> 
-                <td>
-                    <input name="email" type="text" maxlength="90" style="max-width:250px;" />
-                </td> 
-            </tr> 
-            <tr> 
-                <td>
-                    <label for="Comments">Comments*:</label>
-                </td> 
-                <td>
-                    <textarea name="Comments" rows="7" cols="40" style="max-width:350px;"></textarea>
-                </td> 
-            </tr> 
-            <tr> 
-                <td>
-                </td> 
-                <td>
-                    <input name="skip_Submit" type="submit" value="Submit" onclick="ValidateForm()" />
-                </td> 
-            </tr>
-        </table>
-    </form>
+    <div class="contactArea">
+        <div class="title">
+            <h2>contact us</h2>
+            <hr>
+        </div>
+        <form id="contactUs">
+            <input type="text" name="name" id="name" placeholder="Name...">
+            <input type="tel" name="phone" id="phone" placeholder="your phone number...">
+            <input type="email" name="email" id="email" placeholder="your email...">
+            <textarea name="comment" id="comment" cols="30" rows="5" placeholder="type your comment..."></textarea>
+            <input type="submit" name="submit" value="submit">
+        </form>
+    </div>
 
     <script type="text/javascript">
         function checkName(form){
@@ -163,13 +134,8 @@
         } 
     </style> 
 
-    <div style = "margin-top: -150px;">
-        <div class = "main" style = "margin-top: -30px; padding-bottom: 30px;";">CSS Box-Model Implementation</div> 
-            <div class = "inner1"> 
-                <div class = "inner2">SMARTFITS STORE</div> 
-                <div class = "inner3">Buy Variety of clothing products at the best price</div> 
-            </div> 
-    </div>
+
+    <!-- footer -->
     <footer class="footer-distributed">
         <div class="footer-left">
             <h3>Smart<span>&nbsp;Fits</span></h3>

@@ -1,3 +1,38 @@
+.shirt-bg{
+  background-image: url(../../images/titleback.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  margin-top: -16em;
+  width: 100%;
+  height: 100vh;
+}
+
+.shirt-bg li{
+  padding-top: 30px;
+}
+.shirt-bg a{
+  color:black;
+  font-weight: bolder;
+  cursor: pointer;
+  font-size: 30px;
+  border: 10px;
+  text-decoration: wavy;
+  background-color: gainsboro;
+  background-image: linear-gradient(red, yellow);
+  padding: 5px 11px;
+  border-style: 2px solid;
+  border-radius: 20px;
+}
+
+.shirt-bg a:hover{
+  border:1px solid blue;
+  background-image: linear-gradient(to right, red, orange);
+
+}
+
+.row{
+  padding: 2em;
+}
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
